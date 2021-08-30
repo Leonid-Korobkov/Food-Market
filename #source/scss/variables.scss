@@ -2,3 +2,29 @@ $color-primary: #333;
 $color-secondary: #ef633e;
 $accent-color: #5dc4b8;
 $color-white: #fff;
+
+$maxWidth: 1440;
+$maxWidthContainer: 1200;
+
+$padding-vertical: 90;
+$padding-vertical-sm: 60;
+$padding-vertical-xs: 25;
+
+$fz-xs: 16px;
+$fz-s: 20px;
+$fz-m: 24px;
+$fz-l: 40px;
+$fz-xl: 56px;
+$fz-xxl: 72px;
+
+$fw-regular: 400;
+$fw-medium: 700;
+$fw-black: 900;
+
+$breakepoint-576: 576px;
+$breakepoint-768: 768px;
+$breakepoint-992: 992px;
+$breakepoint-1200: 1200px;
+$breakepoint-1400: 1400px;
+
+$transition: all 0.2s ease;

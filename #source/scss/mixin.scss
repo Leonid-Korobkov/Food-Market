@@ -15,6 +15,22 @@
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#96e4dd",endColorstr="#5dc4b8",GradientType=1);
 }
 // @include primary-gradient-1;
+@mixin primary-gradient-1--hover {
+    background: rgb(150,228,221);
+    background: -moz-linear-gradient(360deg, rgba(150,228,221,1) 0%, rgba(93,196,184,1) 100%);
+    background: -webkit-linear-gradient(360deg, rgba(150,228,221,1) 0%, rgba(93,196,184,1) 100%);
+    background: linear-gradient(360deg, rgba(150,228,221,1) 0%, rgba(93,196,184,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#96e4dd",endColorstr="#5dc4b8",GradientType=1);
+}
+// @include primary-gradient-1--hover;
+@mixin primary-gradient-1--waves-bg {
+    background: rgb(150,228,221) url(../img/waves.png) center center no-repeat;
+    background: -moz-linear-gradient(180deg, rgba(150,228,221,1) 0%, rgba(93,196,184,1) 100%) url(../img/waves.png) center center no-repeat;
+    background: -webkit-linear-gradient(180deg, rgba(150,228,221,1) 0%, rgba(93,196,184,1) 100%) url(../img/waves.png) center center no-repeat;
+    background: linear-gradient(180deg, rgba(150,228,221,1) 0%, rgba(93,196,184,1) 100%) url(../img/waves.png) center center no-repeat;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#96e4dd",endColorstr="#5dc4b8",GradientType=1);
+}
+// @include primary-gradient-1--waves-bg;
 @mixin primary-gradient-2 {
     background: rgb(248,156,114);
     background: -moz-linear-gradient(180deg, rgba(248,156,114,1) 0%, rgba(239,99,62,1) 100%);
@@ -57,10 +73,35 @@
 // @include section-block-gradient;
 
 
+@mixin adaptiv-value($property, $startSize, $minSize, $type) {
+    $addSize: $startSize - $minSize;
+    @if $type==1 {
+        // Только если меньше контейнера
+        #{$property}: $startSize + px;
+        @media (max-width: #{$maxWidthContainer + px}) {
+            #{$property}: calc(#{$minSize + px} + #{$addSize} * (100vw - 320px) / #{$maxWidthContainer - 320})};
+    }
+    @else if $type==2 {
+        // Только если больше контейнера
+        #{$property}: $startSize + px;
+        @media (min-width: #{$maxWidthContainer + px}) {
+            #{$property}: calc(#{$minSize + px} + #{$addSize} * (100vw - 320px) / #{$maxWidthContainer - 320})};
+    }
+    @else {
+        // Всегда
+        #{$property}: calc(#{$minSize + px} + #{$addSize} * (100vw - 320px) / #{$maxWidthContainer - 320});
+    }
+}
+// @include adaptiv-value("padding", 50, 20, 0);
 
-
-
-
+// @media (max-width: 1200px) {
+//     .class {
+//         padding: calc(20px + (50 - 20) * ((100vw - 320px) (1200 - 320)));
+//     }
+// }
+// .class {
+//     padding: calc(мин размер на 320px + (изначальлное значение - 20) * ((100vw - 320px) (ширина контейнера - 320)));
+// }
 
 
 // $maxWidth: 1280;

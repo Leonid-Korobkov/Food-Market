@@ -9,6 +9,7 @@ input,button,textarea{font-family:inherit;}
 input::-ms-clear{display:none;}
 button{cursor:pointer;}
 button::-moz-focus-inner{padding:0;border:0;}
+a{display: inline-block;}
 a,a:visited{text-decoration:none;}
 a:hover{text-decoration:none;}
 ul li{list-style:none;}
@@ -16,16 +17,82 @@ img{vertical-align:top;max-width: 100%;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
 /*--------------------*/
 
-@import "media.scss";
-@import "mixin.scss";
 @import "variables.scss";
+@import "mixin.scss";
+@import "media.scss";
+
 
 body{
-	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	@include elsie;
+	font-weight: $fw-regular;
+	color: $color-primary;
+	font-size: $fz-xs;
+	box-sizing: border-box;
 }
+.container {
+	max-width: $maxWidthContainer + px;
+	margin: 0 auto;
+	padding: 0 15px;
+	@include adaptiv-value("padding-top", $padding-vertical, $padding-vertical/2, 1);
+	@include adaptiv-value("padding-bottom", $padding-vertical, $padding-vertical/2, 1);
+}
+.ta-c {
+	text-align: center;
+}
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+.btn {
+    color: $color-white;
+    padding: 15px 30px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    @include primary-gradient-1;
+    @include elsie;
 
-@import "components/header.scss";
-@import "components/footer.scss";
+	&:hover {
+		@include primary-gradient-1--hover;
+	}
+}
+.btn-no-bg {
+	transition: $transition;
+    background: transparent;
+    color: $accent-color;
+    border: 1px solid rgba($accent-color, 0.5);
+
+	&:hover {
+		background: $accent-color;
+		color: $color-white
+	}
+}
+h1{
+	@include elsie;
+	width: 450px;
+	font-size: $fz-xxl;
+	font-weight: $fw-black;
+	@include adaptiv-value("font-size", 72, 56, 1);
+	@include adaptiv-value("margin-bottom", 23, 9, 1);
+}
+h2{
+	margin-bottom: 23px;
+	color: $color-secondary;
+	@include manrope;
+	font-size: $fz-s;
+	font-weight: $fw-medium;
+}
+.text {
+    font-size: $fz-s;
+    @include adaptiv-value("max-width", 470, 305, 1);
+    @include adaptiv-value("margin-bottom", 36, 16, 1);
+}
 @import "components/1-welcome.scss";
 @import "components/2-features.scss";
 @import "components/3-about.scss";
@@ -38,3 +105,5 @@ body{
 @import "components/10-blog.scss";
 @import "components/11-map.scss";
 @import "components/12-contacts.scss";
+@import "components/header.scss";
+@import "components/footer.scss";
