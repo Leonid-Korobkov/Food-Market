@@ -1,12 +1,12 @@
 .section-welcome {
-    overflow-x: hidden;
+    position: relative;
     .container {
         padding: 0 15px;
         @include adaptiv-value("padding-top", 112, 16, 1);
     }
     @include manrope;
     width: 100vw;
-    height: calc(100vh - 80px);
+    height: calc(100% - 80px);
 		&__content {
             display: flex;
             justify-content: space-between;
@@ -24,75 +24,3 @@
             overflow-x: visible;
         }
 }
-.content-img {
-    position: relative;
-    display: flex;
-    .radius-block {
-        @include adaptiv-value("width", 270, 155, 1);
-        @include adaptiv-value("height", 415, 240, 1);
-        border-radius: 100px 24px 24px 24px;
-        img {
-            height: 450px;
-            @include adaptiv-value("height", 450, 270, 1);
-            right: -8px;
-            bottom: 0;
-            position: absolute;
-            object-fit: cover;
-        }
-    }
-    .button-play {
-        @include adaptiv-value("width", 170, 100, 1);
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 100px;
-        box-shadow: 0px 24px 48px rgba(0, 24, 52, 0.2);
-        transition: $transition;
-        &:hover {
-            box-shadow: none;
-        }
-    }
-    &__left-block {
-        margin-right: 30px;
-    }
-    .radius-block--l {
-        margin: 0 0 30px 0;
-        position: relative;
-        @include primary-gradient-2;
-    }
-    .radius-block--s {
-        transform: translateY(-30px);
-        @include adaptiv-value("width", 200, 115, 1);
-        @include adaptiv-value("height", 95, 55, 1);
-        @include primary-gradient-1--waves-bg;
-        border-radius: 16px 32px 16px 16px;
-    }
-    .radius-block--m {
-        border-radius: 24px 24px 100px 24px;
-        background: url(../img/1-welcome/welcome-image-2.jpg) center center / cover no-repeat;
-    }
-    .radius-block-avatar {
-        &__wrap {
-            display: flex;
-            justify-content: flex-end;
-            &-item {
-                border-radius: 100px;
-                overflow: hidden;
-                max-width: 64px;
-                @include adaptiv-value("max-width", 64, 37, 1);
-                margin-left: -15px;
-
-                &:first-child {
-                    margin: 0;
-                }
-            }
-        }
-    }
-    @media (max-width: $breakepoint-576) {
-        order: 1;
-        justify-content: center;
-        margin-bottom: 45px;
-    }
-}
-

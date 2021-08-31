@@ -9,7 +9,7 @@
 
 @mixin primary-gradient-1 {
     background: rgb(150,228,221);
-    background: -moz-linear-gradient(180deg, rgba(150,228,221,1) 0%, rgba(93,196,184,1) 100%);
+    background: -moz-linear-gradient(180deg, rgb(150, 228, 221) 0%, rgb(93, 196, 184) 100%);
     background: -webkit-linear-gradient(180deg, rgba(150,228,221,1) 0%, rgba(93,196,184,1) 100%);
     background: linear-gradient(180deg, rgba(150,228,221,1) 0%, rgba(93,196,184,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#96e4dd",endColorstr="#5dc4b8",GradientType=1);
@@ -17,17 +17,17 @@
 // @include primary-gradient-1;
 @mixin primary-gradient-1--hover {
     background: rgb(150,228,221);
-    background: -moz-linear-gradient(360deg, rgba(150,228,221,1) 0%, rgba(93,196,184,1) 100%);
-    background: -webkit-linear-gradient(360deg, rgba(150,228,221,1) 0%, rgba(93,196,184,1) 100%);
-    background: linear-gradient(360deg, rgba(150,228,221,1) 0%, rgba(93,196,184,1) 100%);
+    background: -moz-linear-gradient(180deg, rgb(93, 196, 184) 0%, rgb(150, 228, 221) 100%);
+    background: -webkit-linear-gradient(180deg,rgba(93,196,184,1) 0%, rgba(150,228,221,1) 100%);
+    background: linear-gradient(180deg, rgba(93,196,184,1) 0%, rgba(150,228,221,1) 100);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#96e4dd",endColorstr="#5dc4b8",GradientType=1);
 }
 // @include primary-gradient-1--hover;
 @mixin primary-gradient-1--waves-bg {
     background: rgb(150,228,221) url(../img/waves.png) center center no-repeat;
-    background: -moz-linear-gradient(180deg, rgba(150,228,221,1) 0%, rgba(93,196,184,1) 100%) url(../img/waves.png) center center no-repeat;
-    background: -webkit-linear-gradient(180deg, rgba(150,228,221,1) 0%, rgba(93,196,184,1) 100%) url(../img/waves.png) center center no-repeat;
-    background: linear-gradient(180deg, rgba(150,228,221,1) 0%, rgba(93,196,184,1) 100%) url(../img/waves.png) center center no-repeat;
+    background: url(../img/waves.png) center center no-repeat, -moz-linear-gradient(180deg, rgba(150,228,221,1) 0%, rgba(93,196,184,1) 100%);
+    background: url(../img/waves.png) center center no-repeat, -webkit-linear-gradient(180deg, rgba(150,228,221,1) 0%, rgba(93,196,184,1) 100%);
+    background: url(../img/waves.png) center center no-repeat, linear-gradient(180deg, rgba(150,228,221,1) 0%, rgba(93,196,184,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#96e4dd",endColorstr="#5dc4b8",GradientType=1);
 }
 // @include primary-gradient-1--waves-bg;
@@ -64,11 +64,11 @@
 }
 // @include secondary-gradient-3;
 @mixin section-block-gradient {
-    background: rgb(255,248,236);
-    background: -moz-linear-gradient(180deg, rgba(255,248,236,1) 0%, rgba(255,239,212,1) 100%);
-    background: -webkit-linear-gradient(180deg, rgba(255,248,236,1) 0%, rgba(255,239,212,1) 100%);
-    background: linear-gradient(180deg, rgba(255,248,236,1) 0%, rgba(255,239,212,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fff8ec",endColorstr="#ffefd4",GradientType=1);
+    background: rgb(255,229,220);
+    background: -moz-linear-gradient(135deg, rgba(255,229,220,1) 0%, rgba(209,247,247,1) 100%);
+    background: -webkit-linear-gradient(135deg, rgba(255,229,220,1) 0%, rgba(209,247,247,1) 100%);
+    background: linear-gradient(135deg, rgba(255,229,220,1) 0%, rgba(209,247,247,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffe5dc",endColorstr="#d1f7f7",GradientType=1);
 }
 // @include section-block-gradient;
 

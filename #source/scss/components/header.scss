@@ -25,11 +25,18 @@
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e8083e",endColorstr="#010252",GradientType=1);
     
     color: transparent;
+    background-clip: text;
     -webkit-background-clip: text; 
     
     background-size: 400% 400%;
     animation: gradient 4s ease-in-out 0s infinite;
     animation-direction: alternate;
+    transition: all 1s ease;
+
+    &:hover {
+        transform: scale(1.2);
+        color: $color-secondary;
+    }
 }
 .nav {
     margin-right: auto;
