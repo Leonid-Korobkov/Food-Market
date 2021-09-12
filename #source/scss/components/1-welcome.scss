@@ -23,4 +23,12 @@
         @media (max-width: $breakepoint-576) {
             overflow-x: visible;
         }
+
+    .content-img {
+        @media (max-width: $breakepoint-576) {
+            order: 1;
+            justify-content: center;
+            margin-bottom: 45px;
+        }
+    }
 }

@@ -124,6 +124,7 @@ h3{
 }
 .title {
 	font-size: $fz-xl;
+    @include adaptiv-value("font-size", 56, 40, 1);
 	font-weight: $fw-black;
 	margin-bottom: 11px;
 }
@@ -184,7 +185,7 @@ h3{
         position: relative;
         @include primary-gradient-2;
     }
-    .radius-block--s {
+    .radius-block--xs {
         transform: translateY(-30px);
         @include adaptiv-value("width", 200, 115, 1);
         @include adaptiv-value("height", 95, 55, 1);
@@ -193,6 +194,11 @@ h3{
 		@media (max-width: $breakepoint-768) {
 			transform: translateY(-18px);
 		}
+    }
+    .radius-block--s {
+        @include adaptiv-value("height", 190, 110, 1);
+        @include primary-gradient-1--waves-bg;
+        border-radius: 24px 24px 24px 100px;
     }
     .radius-block--m {
         border-radius: 24px 24px 100px 24px;
@@ -215,11 +221,6 @@ h3{
             }
         }
     }
-    @media (max-width: $breakepoint-576) {
-        order: 1;
-        justify-content: center;
-        margin-bottom: 45px;
-    }
 }
 .wrap-bg {
     overflow: hidden;
@@ -236,17 +237,26 @@ h3{
 			@include section-block-gradient;
             z-index: -2;
 }
-.bg-circle {
+.bg-rectangale {
     content: "";
     position: absolute;
-    top: 0;
-    right: 0;
-    border-radius: 100%;
-    transform: translate(35%, -40%);
-    @include adaptiv-value("width", 900, 450, 1);
-    @include adaptiv-value("height", 900, 450, 1);
+    // top: 85px;
+    // bottom: 160px;
+    height: 600px;
+    @include adaptiv-value("height", 600, 320, 1);
+    transform: translateY(80px);
+    left: 0;
+    @include adaptiv-value("right", 135, 0, 1);
+    border-radius: 0 24px 100px 0;
     @include section-block-gradient;
     z-index: -2;
+    @media (max-width: 1540px) {
+        right: 0;
+    }
+    @media (max-width: $breakepoint-992) {
+        transform: translateY(60px);
+        @include adaptiv-value("height", 1000, 840, 1);
+    }
 }
 
 @import "components/1-welcome.scss";

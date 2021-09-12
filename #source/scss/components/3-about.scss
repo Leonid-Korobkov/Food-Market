@@ -1,0 +1,43 @@
+.section-about {
+    position: relative;
+    .container {
+        @include adaptiv-value("margin-top", 100, 50, 1);
+    }
+    .title {
+        @include adaptiv-value("margin-bottom", 25, 12, 1);
+    }
+    .subtitle {
+        @include adaptiv-value("margin-bottom", 18, 14, 1);
+    }
+    .text {
+        @include adaptiv-value("margin-bottom", 32, 16, 1);
+        max-width: 370px;
+    }
+
+    .content-img__left-block {
+        transform: translateY(-50px)
+    }
+    .radius-block--l {
+        @include adaptiv-value("height", 450, 255, 1);
+        background: url(../img/3-about/about-image-2.jpg) center center / cover no-repeat;
+    }
+    .radius-block--s {
+        @include primary-gradient-2--waves-bg;
+    }
+    .radius-block--m {
+        background: url(../img/3-about/about-image-1.jpg) center center / cover no-repeat;
+    }
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media (max-width: $breakepoint-992) {
+            flex-direction: column;
+        }
+        
+
+        &-text {
+            @include adaptiv-value("padding-left", 130, -80, 1);
+        }
+    }
+}
