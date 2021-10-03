@@ -1,0 +1,91 @@
+.section-menu {
+        position: relative;
+        .bg-circle {
+            top: 0;
+            left: 0;
+            border-radius: 100%;
+            transform: translate(-35%, 15%);
+        }
+
+		&__content {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 -16px;
+            margin-top: 80px;
+            flex-wrap: wrap;
+        }
+
+		&__column {
+            flex: 0 1 33.333%;
+            flex-wrap: wrap;
+            padding: 0 16px;
+            display: flex;
+            @media (max-width: $breakepoint-768) {
+                flex: 0 1 100%;
+            }
+		}
+
+		&__item {
+            position: relative;
+            border-radius: 100px 24px 24px 24px;
+            background-color: $color-white;
+            box-shadow: 0px 24px 48px rgba(0, 24, 52, 0.080899);
+
+            .menu-img-wrap {
+                overflow: hidden;
+                height: 224px;
+                width: 254px;
+                border-radius: 50px 24px 24px 24px;
+                transform: translate(-25px, -25px);
+            }
+            &-text {
+                padding: 0px 32px 44px 32px;
+            }
+		}
+}
+.review-block {
+    ul {
+        display: flex;
+    }
+}
+.review-block-1 {
+    .star:nth-child(5) {
+        filter: grayscale(1);
+        opacity: 0.4;
+    }
+}
+.review-block-2 {
+    .star:nth-child(5) {
+        filter: grayscale(1);
+        opacity: 0.4;
+    }
+}
+.review-block-3 {
+    .star:nth-child(n + 4) {
+        filter: grayscale(1);
+        opacity: 0.4;
+    }
+}
+.star {
+    & + & {
+        margin-left: 5px;
+    }
+    width: 20px;
+    height: 20px;
+    background: url(../img/4-menu/star.svg) center center / cover no-repeat;
+}
+.price {
+    @include secondary-gradient-2;
+    font-size: $fz-m;
+    font-weight: $fw-black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    bottom: -20px;
+    right: 30px;
+    box-shadow: 0px 16px 24px rgba(0, 24, 52, 0.08);
+}

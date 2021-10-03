@@ -56,7 +56,7 @@
 }
 // @include secondary-gradient-1;
 @mixin secondary-gradient-2 {
-    background: rgb(228,255,252);
+    background: rgb(228, 255, 252);
     background: -moz-linear-gradient(180deg, rgba(228,255,252,1) 0%, rgba(197,255,248,1) 100%);
     background: -webkit-linear-gradient(180deg, rgba(228,255,252,1) 0%, rgba(197,255,248,1) 100%);
     background: linear-gradient(180deg, rgba(228,255,252,1) 0%, rgba(197,255,248,1) 100%);
