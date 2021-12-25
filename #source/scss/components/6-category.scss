@@ -1,0 +1,33 @@
+.section-category {
+    .subtitle {
+        margin: 0 auto 60px;
+        text-align: center;
+    }
+		&__content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+		}
+
+		&__item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 170px;
+            height: 192px;
+            border-radius: 50px 24px 24px 24px;
+		}
+        .item-1, .item-2 {
+            @include secondary-gradient-1;
+        }
+        .item-3 {
+            @include secondary-gradient-2;
+        }
+        .item-4 {
+            @include secondary-gradient-3;
+        }
+
+		&__item-icon {
+            transform: translateY(-30px);
+		}
+}
